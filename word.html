@@ -1,0 +1,90 @@
+<style>
+    header{
+        width: 380px;
+        height: 100%;
+        color: rgba(7, 23, 55, 0.6);
+        background: url("1.png") #3366CC;
+        box-shadow: 5px 5px 100px #3366CC;
+        text-shadow: 0 1px 0.5px rgba(129, 166, 239, 0.6), 0 -1px 0.5px rgba(0, 0, 0, 0.6);
+        text-align: center;
+        font-size: 30px;
+        font-family: "Merriweather", "Bookman Old Style", Times, PMingLiu, serif;
+        position: fixed;
+        top: 0;
+        left: 0;
+        user-select: none;
+        transition: all 0.5s;
+    }
+    .ctrl{
+        width: 40px;
+        height: 100%;
+        display: block;
+        background: url("1.png") #3366CC;
+        cursor: pointer;
+        margin: 0 0 0 auto;
+        line-height: 700px;
+        transition: all 0.5s;
+    }
+    .ctrl:hover{
+        text-shadow: 0 1px 1px rgba(160, 180, 239, 0.8),
+                     0 -1px 0.5px rgba(0, 0, 0, 0.6);
+    }
+    .admin{
+        width: 280px;
+        height: 85%;
+        position: absolute;
+        top: 20px;
+        left: 10px;
+        padding:20px;
+    }
+    .img{
+        width: 120px;
+        height: 120px;
+        border-radius:10px;
+    }
+    header a{
+        color: rgba(7, 23, 55, 0.6);
+        font-size: 1.2em;
+    }
+    .aInfo{
+        float: left;
+        font-size: 0.7em;
+    }
+</style>
+<script>
+    window.onload=function () {
+        let headerView = true;
+        document.getElementById('ctrl').onclick=function () {
+            let header = document.getElementById('header');
+            let ctrl = document.getElementById('ctrl');
+            if(headerView) {
+                header.style.left = "-340px";
+                header.style.opacity="0.8";
+                ctrl.innerHTML = ">>";
+                headerView = false;
+            }
+            else{
+                header.style.left = "0px";
+                header.style.opacity="1";
+                ctrl.innerHTML = "<<";
+                headerView = true;
+            }
+        }
+    }
+</script>
+<header id="header">
+    <span id="ctrl" class="ctrl"><<</span>
+    <div class="admin">
+        <img class="img" src="cat.jpg"/>
+        <br>
+        <a href="http://www.dearvee.com">vee</a>
+        <ul>
+            <li><a class="aInfo" href="#">Essay</a></li>
+            <li><a class="aInfo" href="#">GitHub</a></li>
+            <li><a class="aInfo" href="#">CnBlog</a></li>
+            <li><a class="aInfo" href="#">CSDN</a></li>
+            <li><a class="aInfo" href="#">Tags</a></li>
+        </ul>
+        <h4>Follow your heard~</h4>
+    </div>
+</header>
